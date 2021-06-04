@@ -3,6 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  url_users: 'http://localhost:3200/users',
+  url_auth: 'http://localhost:3200/auth',
+  url_countries: 'https://restcountries.eu/rest/v2/all',
   production: false
 };
 

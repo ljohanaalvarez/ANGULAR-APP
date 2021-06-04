@@ -1,1 +1,43 @@
-<p>signup works!</p>
+<div class="container">
+  <h2>!Bienvenido!</h2>
+  <div class="login-container">
+    <p>Registrarse</p>
+
+    <form autocomplete="off" [formGroup]="form" (ngSubmit) = "signUp()">
+      <div class="form-group">
+        <label class="form-label">Nombre completo</label>
+        <input
+        type="text"
+        class="form-control"
+        placeholder="Nombre completo"
+        formControlName="name">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Correo electrónico</label>
+        <input
+        type="email"
+        class="form-control"
+        placeholder="Correo electrónico"
+        formControlName="email">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Contraseña</label>
+        <input
+        type="text"
+        class="form-control"
+        placeholder="Contraseña"
+        formControlName="passWord">
+      </div>
+
+      <div class="container-button">
+        <button type="submit" class="btn">Aceptar</button>
+      </div>
+      <div class="container_footer">
+        <p> Si ya estás registrado, inicia sesión <a routerLink='/'> AQUI </a></p>
+      </div>
+    </form>
+  </div>
+</div>
+

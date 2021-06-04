@@ -1,0 +1,33 @@
+
+  <div class="target">
+    <table class="table">
+      <tr class="row">
+        <td>
+          <span>Nombre:</span> <br/> {{country.name}}
+        </td>
+        <td>
+          <span>Alpha3code:</span> <br/> {{country.alpha3Code}}
+        </td>
+      </tr>
+      <tr class="row">
+        <td>
+          <span>Región:</span> <br/>{{country.region}}
+        </td>
+        <td>
+          <span>Subregión:</span> <br/>{{country.subregion}}
+        </td>
+      </tr>
+      <tr class="row">
+        <td>
+          <span>Capital:</span> <br/>{{country.capital}}
+        </td>
+        <td>
+          <span>Población:</span> <br/>{{country.population | number: '.0-0'}}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+
+

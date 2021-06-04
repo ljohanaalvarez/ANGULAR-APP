@@ -1,0 +1,50 @@
+$primary-color: #06183f;
+$secondary-color: #e4e6e5;
+$hover-color: #1e367e;
+$font-stack: 'Merriweather Sans', sans-serif;
+
+.side-menu {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  margin-top: 98px;
+
+  background-image: linear-gradient(
+    180deg,
+    #112664 0,
+    #06183f 50%,
+    #02022e 100%);
+
+
+    a {
+      display: block;
+      text-decoration: none;
+      line-height: 60px;
+      color: $secondary-color;
+      font-family: $font-stack;
+      font-size: 0.8rem;
+      img {
+        width: 25px;
+        height: 25px;
+        margin-left: 20px;
+        margin-right: 20px;
+        color: $secondary-color;
+      }
+
+
+    }
+
+    a:hover{
+      background: $hover-color;
+    }
+
+    .menu {
+      position: absolute;
+      bottom: 150px;
+      left: 188px;
+      img {
+        width: 25px ;
+        height: 25px;
+      }
+    }
+}

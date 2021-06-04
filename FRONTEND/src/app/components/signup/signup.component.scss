@@ -1,0 +1,77 @@
+$primary-color: rgb(5, 4, 70);
+$secondary-color: #e4e6e5;
+$font-stack: 'Merriweather Sans', sans-serif;
+
+%flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+%container-spacearound{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.container{
+  @extend %flex-center;
+  font: 100% $font-stack;
+  height: 100vh;
+  width: 100vw;
+  background-color: $primary-color;
+  h2{
+    font-weight: 700;
+    color: $secondary-color ;
+  }
+}
+.login-container{
+  @extend %flex-center;
+  background-color: $secondary-color;
+  width: 250px;
+  height: 300px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  p{
+    font-weight: 700;
+    color: $primary-color;
+  }
+  form{
+    width: 80%;
+    .form-group{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 8px;
+      font-weight: 500;
+      .form-control{
+        width: 100% ;
+        height: 30px;
+        border-radius: 7px;
+        text-align: center;
+        font-size: 0.6rem;
+      }
+    }
+    .container-button{
+      @extend %container-spacearound;
+      .btn{
+        width: 90%;
+        height: 30px;
+        border-radius: 15px ;background-color: $primary-color ;
+        color: $secondary-color;
+        font-size: 0.8rem;
+      }
+    }
+    .container_footer{
+      @extend %container-spacearound;
+      margin-top: 10px;
+      font-size: 0.5rem;
+      p{
+        a{
+          color: rgb(206, 87, 7);
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import User from '../models/user'
 import jwt from 'jsonwebtoken';
+import config from '../config';
 
 export const register = async (req, res) => { 
     const { name, email, password } = req.body;
@@ -14,7 +15,7 @@ export const register = async (req, res) => {
             email, 
             password: await User.encriptPassword(password)});
         const savedUser = await newUser.save();
-        const token = jwt.sign({id: savedUser._id, name: savedUser.name}, 'twister', {
+        const token = jwt.sign({id: savedUser._id, name: savedUser.name}, `${config.secretKey}`, {
             expiresIn: 43200
         });
         return res.status(201).json({savedUser})
@@ -34,7 +35,7 @@ export const login = async (req, res) => {
             const correctPassword = await User.comparePassword(receivedPassword, user.password)
             console.log('correctPassword, ', correctPassword)  
             if(correctPassword){
-                const token = jwt.sign({_id: user._id, name: user.name}, 'twister');
+                const token = jwt.sign({_id: user._id, name: user.name}, `${config.secretKey}`);
             return res.status(200).json({token, user}) 
             }else{
                 return res.status(401).send('Is not authorized, wrong password :(')
